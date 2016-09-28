@@ -5,6 +5,14 @@ An Angular2 component to visualize a star rating bar, built for Ionic 2.
 
 #### How to use:
 
+Install with npm:
+
+```
+$ npm install ionic2-rating
+```
+
+In your component:
+
 ```TypeScript
 import { Ionic2Rating } from 'ionic2-rating';
 
