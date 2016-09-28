@@ -29,6 +29,12 @@ export class MyComponent {
 <rating [(ngModel)]="rate"></rating>
 ```
 
+If you want to make it read-only, use "readOnly" property:
+
+```HTML
+<rating [(ngModel)]="rate" readOnly="true"></rating>
+```
+
 You may also need to customize component styles:
 
 ```CSS
