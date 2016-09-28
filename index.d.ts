@@ -1,0 +1,1 @@
+export * from './ionic2-rating';

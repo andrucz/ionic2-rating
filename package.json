@@ -2,12 +2,16 @@
   "name": "ionic2-rating",
   "version": "0.0.1",
   "dependencies": {
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12"
   },
   "devDependencies": {
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12",
+    "es6-shim": "0.35.1",
+    "typings": "1.3.1",
     "gulp": "3.9.1",
     "gulp-watch": "4.3.5"
   },
@@ -24,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/andrucz/ionic2-rating/issues"
   },
-  "homepage": "https://github.com/andrucz/ionic2-rating"
+  "homepage": "https://github.com/andrucz/ionic2-rating",
+  "scripts": {
+    "install_typings": "typings install",
+    "prepublish": "typings install && tsc --outDir ."
+  },
+  "types": "./index.d.ts"
 }
