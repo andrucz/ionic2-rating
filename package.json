@@ -1,6 +1,6 @@
 {
   "name": "ionic2-rating",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
   },
   "devDependencies": {
@@ -33,5 +33,5 @@
     "install_typings": "typings install",
     "prepublish": "typings install && tsc --outDir ."
   },
-  "types": "./index.d.ts"
+  "typings": "./index.d.ts"
 }
