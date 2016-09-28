@@ -29,4 +29,15 @@ export class MyComponent {
 <rating [(ngModel)]="rate"></rating>
 ```
 
+You may also need to customize component styles:
+
+```CSS
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  color: #ffb400;
+}
+```
+
 Based on ionic-rating for Ionic 1: https://github.com/fraserxu/ionic-rating
