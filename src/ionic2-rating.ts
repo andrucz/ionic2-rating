@@ -43,7 +43,7 @@ export class Ionic2Rating implements ControlValueAccessor {
   private onChangeCallback: (_: any) => void = noop;
 
   ngOnInit() {
-    let states = [];
+    let states: Array<number> = [];
 
     for (let i = 0; i < this.max; i++) {
       if (this.innerValue > i && this.innerValue < i + 1) {
@@ -84,7 +84,7 @@ export class Ionic2Rating implements ControlValueAccessor {
   registerOnTouched(fn: any) {
   }
 
-  onKeyDown(event) {
+  onKeyDown(event: any) {
     if (/(37|38|39|40)/.test(event.which)) {
       event.preventDefault();
       event.stopPropagation();

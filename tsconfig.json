@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
+    "noImplicitAny": true,
     "target": "es5",
     "module": "commonjs",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "declaration": true
   },
-  "filesGlob": [
-    "**/*.ts",
-    "!node_modules/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "typings/global",
-    "typings/global.d.ts"
+  "files": [
+    "typings/index.d.ts",
+    "src/ionic2-rating.ts",
+    "src/index.ts"
   ],
   "compileOnSave": false,
   "atom": {

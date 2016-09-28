@@ -1,6 +1,23 @@
 {
   "name": "ionic2-rating",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "author": "andrucz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrucz/ionic2-rating/issues"
+  },
+  "homepage": "https://github.com/andrucz/ionic2-rating",
+  "typings": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.js.map",
+    "index.d.ts",
+    "src/index.ts",
+    "typings.json",
+    "ionic2-rating.js",
+    "ionic2-rating.js.map",
+    "src/ionic2-rating.ts"
+  ],
   "dependencies": {
   },
   "devDependencies": {
@@ -23,15 +40,8 @@
     "ionic2",
     "angular2"
   ],
-  "author": "andrucz",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andrucz/ionic2-rating/issues"
-  },
-  "homepage": "https://github.com/andrucz/ionic2-rating",
   "scripts": {
     "install_typings": "typings install",
     "prepublish": "typings install && tsc --outDir ."
-  },
-  "typings": "./index.d.ts"
+  }
 }
