@@ -1,0 +1,28 @@
+{
+  "name": "ionic2-rating",
+  "version": "0.0.1",
+  "dependencies": {
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-watch": "4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrucz/ionic2-rating.git"
+  },
+  "keywords": [
+    "ionic2",
+    "angular2"
+  ],
+  "author": "andrucz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrucz/ionic2-rating/issues"
+  },
+  "homepage": "https://github.com/andrucz/ionic2-rating"
+}
