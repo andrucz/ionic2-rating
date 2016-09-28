@@ -1,6 +1,6 @@
 {
   "name": "ionic2-rating",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": "andrucz",
   "license": "MIT",
   "bugs": {
@@ -9,13 +9,14 @@
   "homepage": "https://github.com/andrucz/ionic2-rating",
   "typings": "./index.d.ts",
   "files": [
+    "index.d.ts",
     "index.js",
     "index.js.map",
-    "index.d.ts",
-    "src/index.ts",
-    "typings.json",
+    "ionic2-rating.d.ts",
     "ionic2-rating.js",
     "ionic2-rating.js.map",
+    "src/index.ts",
+    "typings.json",
     "src/ionic2-rating.ts"
   ],
   "dependencies": {

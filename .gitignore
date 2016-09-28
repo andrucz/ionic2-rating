@@ -2,6 +2,7 @@ node_modules
 typings
 ionic2-rating.js
 ionic2-rating.js.map
+ionic2-rating.d.ts
 index.js
 index.js.map
 index.d.ts
