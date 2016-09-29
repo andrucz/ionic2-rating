@@ -6,6 +6,9 @@ ionic2-rating.d.ts
 index.js
 index.js.map
 index.d.ts
+module.js
+module.js.map
+module.d.ts
 *.spec.js
 *.spec.js.map
 *.spec.d.ts
