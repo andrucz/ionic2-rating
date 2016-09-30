@@ -22,6 +22,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 export class AppModule {}
 ```
 
+Important: there is an open issue about the use of third party libraries on Ionic 2 RC.0 apps: https://github.com/driftyco/ionic/issues/8322
+
 ##### For Angular 2 RC4 (Ionic 2 beta version):
 
 ```
