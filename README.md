@@ -3,6 +3,8 @@ ionic2-rating
 
 An Angular2 component to visualize a star rating bar, built for Ionic 2.
 
+![Preview][preview-image]
+
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][downloads-url]
 
 [![NPM][nodei-image]][nodei-url]
@@ -79,6 +81,7 @@ ul.rating li {
 
 Based on ionic-rating for Ionic 1: https://github.com/fraserxu/ionic-rating
 
+[preview-image]: https://github.com/andrucz/ionic2-rating/blob/master/preview.gif
 [npm-url]: https://www.npmjs.com/package/ionic2-rating
 [npm-image]: https://img.shields.io/npm/v/ionic2-rating.svg
 [nodei-image]: https://nodei.co/npm/ionic2-rating.png?downloads=true&downloadRank=true&stars=true
