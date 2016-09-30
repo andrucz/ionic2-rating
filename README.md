@@ -3,12 +3,31 @@ ionic2-rating
 
 An Angular2 component to visualize a star rating bar, built for Ionic 2.
 
-#### How to use:
+#### How to install:
 
-Install with npm:
+##### For Angular 2 RC5 and later (Ionic 2 RC.0 and later):
 
 ```
-$ npm install ionic2-rating
+$ npm install --save ionic2-rating
+```
+
+```Typescript
+import { Ionic2RatingModule } from 'ionic2-rating';
+
+@NgModule({
+  imports: [
+    Ionic2RatingModule
+  ]
+})
+export class AppModule {}
+```
+
+Important: there is an open issue about the use of third party libraries on Ionic 2 RC.0 apps: https://github.com/driftyco/ionic/issues/8322
+
+##### For Angular 2 RC4 (Ionic 2 beta version):
+
+```
+$ npm install --save ionic2-rating@0.0.6
 ```
 
 In your component:
@@ -25,6 +44,8 @@ export class MyComponent {
 }
 ```
 
+#### How to use:
+
 ```HTML
 <rating [(ngModel)]="rate"></rating>
 ```
@@ -33,6 +54,12 @@ If you want to make it read-only, use "readOnly" property:
 
 ```HTML
 <rating [(ngModel)]="rate" readOnly="true"></rating>
+```
+
+If you want to change the number of stars, use "max" property (default is 5):
+
+```HTML
+<rating [(ngModel)]="rate" max="10"></rating>
 ```
 
 You may also need to customize component styles:
