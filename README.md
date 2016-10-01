@@ -18,7 +18,7 @@ $ npm install --save ionic2-rating
 ```
 
 ```Typescript
-import { Ionic2RatingModule } from 'ionic2-rating';
+import { Ionic2RatingModule } from 'ionic2-rating/module';
 
 @NgModule({
   imports: [
