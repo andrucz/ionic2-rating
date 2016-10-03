@@ -71,11 +71,18 @@ If you want to change the number of stars, use "max" property (default is 5):
 You may also need to customize component styles:
 
 ```CSS
-ul.rating li {
-  display: inline;
-  border: 0px;
-  background: none;
-  color: #ffb400;
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 5px 10px;
+    background: none;
+    color: #ffb400;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
 }
 ```
 
