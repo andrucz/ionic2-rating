@@ -1,6 +1,6 @@
 {
   "name": "ionic2-rating",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "andrucz",
   "license": "MIT",
   "bugs": {
@@ -12,13 +12,16 @@
     "index.d.ts",
     "index.js",
     "index.js.map",
+    "index.metadata.json",
     "src/index.ts",
     "ionic2-rating.d.ts",
     "ionic2-rating.js",
     "ionic2-rating.js.map",
+    "ionic2-rating.metadata.json",
     "module.js",
     "module.js.map",
     "module.d.ts",
+    "module.metadata.json",
     "src/module.ts",
     "src/ionic2-rating.ts"
   ],
@@ -26,7 +29,8 @@
     "ionic-angular": "^2.0.0-rc.0"
   },
   "devDependencies": {
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "copyfiles": "1.0.0"
   },
   "repository": {
     "type": "git",
@@ -37,6 +41,6 @@
     "angular2"
   ],
   "scripts": {
-    "prepublish": "tsc --outDir ."
+    "prepublish": "ngc && copyfiles -f src/*.js src/*.js.map src/*.d.ts src/*.metadata.json ."
   }
 }

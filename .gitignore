@@ -12,3 +12,7 @@ module.d.ts
 *.spec.js
 *.spec.js.map
 *.spec.d.ts
+
+# ngc
+/compiled
+*.metadata.json

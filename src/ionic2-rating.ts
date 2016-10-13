@@ -24,8 +24,8 @@ export const RATING_CONTROL_VALUE_ACCESSOR: any = {
       }
   `],
   template: `
-    <ul class="rating" (keydown)="onKeydown($event)">
-      <li *ngFor="let r of range; let i = index; trackBy:i" (click)="rate(i + 1)">
+    <ul class="rating" (keydown)="onKeyDown($event)">
+      <li *ngFor="let r of range; let i = index" (click)="rate(i + 1)">
         <ion-icon [name]="value === undefined ? (r === 1 ? 'star' : (r === 2 ? 'star-half' : 'star-outline')) : (value > i ? (value < i+1 ? 'star-half' : 'star') : 'star-outline')">
         </ion-icon>
       </li>
@@ -38,9 +38,9 @@ export class Ionic2Rating implements ControlValueAccessor {
   @Input() max = 5;
   @Input() readOnly = false;
 
-  private range: Array<Number>;
-  private innerValue: any;
-  private onChangeCallback: (_: any) => void = noop;
+  range: Array<Number>;
+  innerValue: any;
+  onChangeCallback: (_: any) => void = noop;
 
   ngOnInit() {
     let states: Array<number> = [];

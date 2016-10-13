@@ -1,4 +1,5 @@
 {
+  "version": "2.0.3",
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5",
@@ -13,5 +14,8 @@
     "src/ionic2-rating.ts",
     "src/module.ts",
     "src/index.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "compiled"
+  }
 }
