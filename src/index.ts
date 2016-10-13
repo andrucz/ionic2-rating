@@ -1,2 +1,2 @@
-export * from './module';
-export * from './ionic2-rating';
+export { Ionic2RatingModule } from './module';
+export { Ionic2Rating } from './ionic2-rating';
