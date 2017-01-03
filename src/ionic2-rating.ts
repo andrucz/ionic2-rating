@@ -25,7 +25,7 @@ export const RATING_CONTROL_VALUE_ACCESSOR: any = {
   `],
   template: `
     <ul class="rating" (keydown)="onKeyDown($event)">
-      <li *ngFor="let r of range; let i = index" (click)="rate(i + 1)">
+      <li *ngFor="let r of range; let i = index" tappable (click)="rate(i + 1)">
         <ion-icon [name]="value === undefined ? (r === 1 ? 'star' : (r === 2 ? 'star-half' : 'star-outline')) : (value > i ? (value < i+1 ? 'star-half' : 'star') : 'star-outline')">
         </ion-icon>
       </li>
