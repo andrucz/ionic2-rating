@@ -94,8 +94,12 @@ export class Ionic2Rating implements ControlValueAccessor {
   }
 
   rate(amount: number) {
-    if (!this.readOnly && amount >= 0 && amount <= this.range.length) {
-      this.value = amount;
+    if(number == this.innerValue) {
+      this.innerValue = null;
+    } else {
+      if (!this.readOnly && amount >= 0 && amount <= this.range.length) {
+        this.value = amount;
+      }
     }
   }
 
