@@ -93,9 +93,9 @@ export class Ionic2Rating implements ControlValueAccessor {
     }
   }
 
-  rate(amount: number) {
-    if (!this.readOnly && amount >= 0 && amount <= this.range.length) {
-      this.value = amount;
+  rate(value: number) {
+    if (!this.readOnly && value >= 0 && value <= this.range.length) {
+      this.value = value;
     }
   }
 
