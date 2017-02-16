@@ -9,33 +9,55 @@ An Angular2 component to visualize a star rating bar, built for Ionic 2.
 
 [![NPM][nodei-image]][nodei-url]
 
-#### How to install:
+## How to install:
 
 ```
 $ npm install --save ionic2-rating
 ```
 
-#### How to use:
+## How to use:
 
-```Typescript
+```typescript
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+
+// Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 @NgModule({
+  declarations: [
+    MyApp,
+    HomePage
+  ],
   imports: [
-    Ionic2RatingModule
-  ]
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule // Put ionic2-rating module here
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage
+  ],
+  providers: []
 })
 export class AppModule {}
 ```
 
+
+
 ```HTML
 <rating [(ngModel)]="rate" 
-        readOnly="true"
-        max="5"
+        readOnly="false" // default value
+        max="5" // default value
+        emptyStarIconName="star-outline" // default value
+        halfStarIconName="star-half" // default value
+        starIconName="star" // default value
         (ngModelChange)="onModelChange($event)"></rating>
 ```
 
-You may also need to customize component styles:
+### You may also need to customize component styles:
 
 ```CSS
 ul {
