@@ -54,6 +54,7 @@ export class AppModule {}
         emptyStarIconName="star-outline" // default value
         halfStarIconName="star-half" // default value
         starIconName="star" // default value
+        nullable="false" // default value
         (ngModelChange)="onModelChange($event)"></rating>
 ```
 
