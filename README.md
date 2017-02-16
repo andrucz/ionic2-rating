@@ -9,64 +9,55 @@ An Angular2 component to visualize a star rating bar, built for Ionic 2.
 
 [![NPM][nodei-image]][nodei-url]
 
-#### How to install:
-
-##### For Angular 2 RC5 and later (Ionic 2 RC.0 and later):
+## How to install:
 
 ```
 $ npm install --save ionic2-rating
 ```
 
-```Typescript
+## How to use:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+
+// Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 @NgModule({
+  declarations: [
+    MyApp,
+    HomePage
+  ],
   imports: [
-    Ionic2RatingModule
-  ]
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule // Put ionic2-rating module here
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage
+  ],
+  providers: []
 })
 export class AppModule {}
 ```
 
-##### For Angular 2 RC4 (Ionic 2 beta version):
 
-```
-$ npm install --save ionic2-rating@0.0.6
-```
-
-In your component:
-
-```TypeScript
-import { Ionic2Rating } from 'ionic2-rating';
-
-@Component({
-  templateUrl: '...',
-  directives: [Ionic2Rating]
-})
-export class MyComponent {
-  private rate = 2.5;
-}
-```
-
-#### How to use:
 
 ```HTML
-<rating [(ngModel)]="rate"></rating>
+<rating [(ngModel)]="rate" 
+        readOnly="false" // default value
+        max="5" // default value
+        emptyStarIconName="star-outline" // default value
+        halfStarIconName="star-half" // default value
+        starIconName="star" // default value
+        (ngModelChange)="onModelChange($event)"></rating>
 ```
 
-If you want to make it read-only, use "readOnly" property:
-
-```HTML
-<rating [(ngModel)]="rate" readOnly="true"></rating>
-```
-
-If you want to change the number of stars, use "max" property (default is 5):
-
-```HTML
-<rating [(ngModel)]="rate" max="10"></rating>
-```
-
-You may also need to customize component styles:
+### You may also need to customize component styles:
 
 ```CSS
 ul {

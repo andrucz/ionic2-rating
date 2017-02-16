@@ -1,26 +1,21 @@
 {
-  "version": "2.0.3",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
     "module": "es2015",
-    "moduleResolution": "node",
     "target": "es5",
-    "noImplicitAny": true,
+    "moduleResolution": "node",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2015"],
+    "outDir": "./dist"
   },
-  "files": [
-    "src/ionic2-rating.ts",
-    "src/module.ts",
-    "src/index.ts"
+  "exclude": [
+    "node_modules",
+    "dist",
+    "scripts"
   ],
   "angularCompilerOptions": {
-    "genDir": "compiled"
+    "genDir": "aot"
   }
 }

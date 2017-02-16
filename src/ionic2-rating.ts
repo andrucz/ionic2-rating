@@ -13,61 +13,110 @@ export const RATING_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'rating',
   styles: [`
-      ul.rating li {
-        display: inline;
-        border: 0px;
-        background: none;
-        padding: 5px 10px;
-      }
-      ul.rating li i {
-        font-size: 30px;
-      }
+    ul.rating li {
+      display: inline;
+      border: 0px;
+      background: none;
+      padding: 5px 10px;
+    }
+    ul.rating li i {
+      font-size: 30px;
+    }
   `],
   template: `
     <ul class="rating" (keydown)="onKeyDown($event)">
-      <li *ngFor="let r of range; let i = index" tappable (click)="rate(i + 1)">
-        <ion-icon [name]="value === undefined ? (r === 1 ? 'star' : (r === 2 ? 'star-half' : 'star-outline')) : (value > i ? (value < i+1 ? 'star-half' : 'star') : 'star-outline')">
+      <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">
+        <ion-icon [name]="getStarIconName(starIndex)">
         </ion-icon>
       </li>
-    </ul>
-  `,
+    </ul>`,
   providers: [RATING_CONTROL_VALUE_ACCESSOR]
 })
 export class Ionic2Rating implements ControlValueAccessor {
 
-  @Input() max = 5;
-  @Input() readOnly = false;
+  _max: number = 5;
+  _readOnly: boolean = false;
+  _emptyStarIconName: string = 'star-outline';
+  _halfStarIconName: string = 'star-half';
+  _starIconName: string = 'star';
 
-  range: Array<Number>;
+  @Input()
+  get max() {
+    return this._max;
+  }
+  set max(val: any) {
+    this._max = this.getNumberPropertyValue(val);
+  }
+
+  @Input()
+  get readOnly() {
+    return this._readOnly;
+  }
+  set readOnly(val: any) {
+    this._readOnly = this.isTrueProperty(val);
+  }
+
+  @Input()
+  get emptyStarIconName() {
+    return this._emptyStarIconName;
+  }
+  set emptyStarIconName(val: any) {
+    this._emptyStarIconName = val;
+  }
+
+  @Input()
+  get halfStarIconName() {
+    return this._halfStarIconName;
+  }
+  set halfStarIconName(val: any) {
+    this._halfStarIconName = val;
+  }
+
+  @Input()
+  get starIconName() {
+    return this._starIconName;
+  }
+  set starIconName(val: any) {
+    this._starIconName = val;
+  } 
+
   innerValue: any;
+  starIndexes: Array<number>;
+
   onChangeCallback: (_: any) => void = noop;
 
   ngOnInit() {
-    let states: Array<number> = [];
+    // ngFor needs an array
+    this.starIndexes = Array(this.max).fill(1).map((x, i) => i);
+  }
 
-    for (let i = 0; i < this.max; i++) {
-      if (this.innerValue > i && this.innerValue < i + 1) {
-        states[i] = 2;
-
-      } else if (this.innerValue > i) {
-        states[i] = 1;
-
-      } else {
-        states[i] = 0;
-      }
+  getStarIconName(starIndex: number) {
+    if (this.value === undefined) {
+      return this.emptyStarIconName;
     }
 
-    this.range = states;
+    if (this.value > starIndex) {
+
+      if (this.value < starIndex + 1) {
+        return this.halfStarIconName;
+
+      } else {
+        return this.starIconName;
+      }
+
+    } else {
+      return this.emptyStarIconName;
+    }
   }
 
   get value(): any {
     return this.innerValue;
   }
 
-  set value(v: any) {
-    if (v !== this.innerValue) {
-      this.innerValue = v;
-      this.onChangeCallback(v);
+  set value(value: any) {
+    if (value !== this.innerValue) {
+      this.innerValue = value;
+      this.onChangeCallback(value);
     }
   }
 
@@ -88,19 +137,34 @@ export class Ionic2Rating implements ControlValueAccessor {
     if (/(37|38|39|40)/.test(event.which)) {
       event.preventDefault();
       event.stopPropagation();
+
       let newValue = this.value + ((event.which == 38 || event.which == 39) ? 1 : -1);
       return this.rate(newValue);
     }
   }
 
-  rate(amount: number) {
-    if(number == this.innerValue) {
-      this.innerValue = null;
-    } else {
-      if (!this.readOnly && amount >= 0 && amount <= this.range.length) {
-        this.value = amount;
+  rate(value: number) {
+    if (!this.readOnly) {
+      if (value == this.value) {
+        this.value = null;
+      } else if (value >= 0 && value <= this.max) {
+        this.value = value;
       }
     }
   }
 
+  private isTrueProperty(val: any): boolean {
+    if (typeof val === 'string') {
+      val = val.toLowerCase().trim();
+      return (val === 'true' || val === 'on');
+    }
+    return !!val;
+  }
+
+  private getNumberPropertyValue(val: any): number {
+    if (typeof val === 'string') {
+      return parseInt(val.trim());
+    }
+    return val;
+  }
 }
