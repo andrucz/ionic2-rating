@@ -35,19 +35,19 @@ export const RATING_CONTROL_VALUE_ACCESSOR: any = {
 export class Ionic2Rating implements ControlValueAccessor {
 
   @Input() 
-  max = 5;
+  max: number = 5;
 
   @Input() 
-  readOnly = false;
+  readOnly: boolean = false;
 
   @Input()
-  emptyStarIconName = 'star-outline';
+  emptyStarIconName: string = 'star-outline';
 
   @Input()
-  halfStarIconName = 'star-half';
+  halfStarIconName: string = 'star-half';
 
   @Input()
-  starIconName = 'star';
+  starIconName: string = 'star';
 
   private innerValue: any;
 
@@ -56,6 +56,7 @@ export class Ionic2Rating implements ControlValueAccessor {
   onChangeCallback: (_: any) => void = noop;
 
   ngOnInit() {
+    // ngFor needs an array
     this.starIndexes = Array(this.max).fill(1).map((x, i) => i);
   }
 
