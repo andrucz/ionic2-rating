@@ -34,23 +34,53 @@ export const RATING_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class Ionic2Rating implements ControlValueAccessor {
 
-  @Input() 
-  max: number = 5;
-
-  @Input() 
-  readOnly: boolean = false;
-
-  @Input()
-  emptyStarIconName: string = 'star-outline';
+  _max: number = 5;
+  _readOnly: boolean = false;
+  _emptyStarIconName: string = 'star-outline';
+  _halfStarIconName: string = 'star-half';
+  _starIconName: string = 'star';
 
   @Input()
-  halfStarIconName: string = 'star-half';
+  get max() {
+    return this._max;
+  }
+  set max(val: any) {
+    this._max = this.getNumberPropertyValue(val);
+  }
 
   @Input()
-  starIconName: string = 'star';
+  get readOnly() {
+    return this._readOnly;
+  }
+  set readOnly(val: any) {
+    this._readOnly = this.isTrueProperty(val);
+  }
 
-  private innerValue: any;
+  @Input()
+  get emptyStarIconName() {
+    return this._emptyStarIconName;
+  }
+  set emptyStarIconName(val: any) {
+    this._emptyStarIconName = val;
+  }
 
+  @Input()
+  get halfStarIconName() {
+    return this._halfStarIconName;
+  }
+  set halfStarIconName(val: any) {
+    this._halfStarIconName = val;
+  }
+
+  @Input()
+  get starIconName() {
+    return this._starIconName;
+  }
+  set starIconName(val: any) {
+    this._starIconName = val;
+  } 
+
+  innerValue: any;
   starIndexes: Array<number>;
 
   onChangeCallback: (_: any) => void = noop;
@@ -117,5 +147,20 @@ export class Ionic2Rating implements ControlValueAccessor {
     if (!this.readOnly && value >= 0 && value <= this.max) {
       this.value = value;
     }
+  }
+
+  private isTrueProperty(val: any): boolean {
+    if (typeof val === 'string') {
+      val = val.toLowerCase().trim();
+      return (val === 'true' || val === 'on');
+    }
+    return !!val;
+  }
+
+  private getNumberPropertyValue(val: any): number {
+    if (typeof val === 'string') {
+      return parseInt(val.trim());
+    }
+    return val;
   }
 }
