@@ -39,6 +39,7 @@ export class Ionic2Rating implements ControlValueAccessor {
   _emptyStarIconName: string = 'star-outline';
   _halfStarIconName: string = 'star-half';
   _starIconName: string = 'star';
+  _nullable: boolean = false;
 
   @Input()
   get max() {
@@ -78,7 +79,15 @@ export class Ionic2Rating implements ControlValueAccessor {
   }
   set starIconName(val: any) {
     this._starIconName = val;
-  } 
+  }
+
+  @Input()
+  get nullable() {
+    return this._nullable;
+  }
+  set nullable(val: any) {
+    this._nullable = this.isTrueProperty(val);
+  }
 
   innerValue: any;
   starIndexes: Array<number>;
@@ -144,9 +153,15 @@ export class Ionic2Rating implements ControlValueAccessor {
   }
 
   rate(value: number) {
-    if (!this.readOnly && value >= 0 && value <= this.max) {
-      this.value = value;
+    if (this.readOnly || value < 0 || value > this.max) {
+      return;
     }
+
+    if (value === this.value && this.nullable) {
+      value = null;
+    }
+
+    this.value = value;
   }
 
   private isTrueProperty(val: any): boolean {
