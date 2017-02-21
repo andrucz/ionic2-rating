@@ -1,6 +1,6 @@
 {
   "name": "ionic2-rating",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An Angular2 component to visualize a star rating bar, built for Ionic 2.",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
