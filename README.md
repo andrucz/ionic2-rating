@@ -49,7 +49,7 @@ export class AppModule {}
 
 ```HTML
 <rating [(ngModel)]="rate" 
-        readOnly="false" // default value
+        readOnly="false" // default value, so it can be ommited
         max="5" // default value
         emptyStarIconName="star-outline" // default value
         halfStarIconName="star-half" // default value
@@ -65,7 +65,7 @@ ul {
   padding: 0px;
 
   &.rating li {
-    padding: 5px 10px;
+    padding: 5px 10px !important;
     background: none;
     color: #ffb400;
 
