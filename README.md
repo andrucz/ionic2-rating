@@ -49,13 +49,14 @@ export class AppModule {}
 
 ```HTML
 <rating [(ngModel)]="rate" 
-        readOnly="false" // default value, so it can be ommited
-        max="5" // default value
-        emptyStarIconName="star-outline" // default value
-        halfStarIconName="star-half" // default value
-        starIconName="star" // default value
-        nullable="false" // default value
-        (ngModelChange)="onModelChange($event)"></rating>
+        readOnly="false" <!--default value-->
+        max="5" <!--default value-->
+        emptyStarIconName="star-outline" <!--default value-->
+        halfStarIconName="star-half" <!--default value-->
+        starIconName="star" <!--default value-->
+        nullable="false" <!--default value-->
+        (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+</rating>
 ```
 
 ### You may also need to customize component styles:
