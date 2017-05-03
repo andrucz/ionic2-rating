@@ -1,7 +1,7 @@
 ionic2-rating
 =============
 
-An Angular2 component to visualize a star rating bar, built for Ionic 2.
+An Angular2 component to visualize a star rating bar, built for Ionic 2+.
 
 ![Preview][preview-image]
 
@@ -17,6 +17,7 @@ $ npm install --save ionic2-rating
 
 ## How to use:
 
+Import `Ionic2RatingModule` on your `src/app/app.module.ts`.
 ```typescript
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
@@ -45,8 +46,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 export class AppModule {}
 ```
 
-
-
+Include the component on page template, like the example below:
 ```HTML
 <rating [(ngModel)]="rate" 
         readOnly="false" <!--default value-->
