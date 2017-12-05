@@ -45,6 +45,28 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 })
 export class AppModule {}
 ```
+If you are using `Lazy Loading` in your application, add the `Ionic2RatingModule` to the page module instead of the app module.
+```typescript
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { ProfilePage } from './profile';
+import { Ionic2RatingModule } from "ionic2-rating";
+
+@NgModule({
+  declarations: [
+    ProfilePage,
+  ],
+  imports: [
+    IonicPageModule.forChild(ProfilePage),
+    Ionic2RatingModule // Put ionic2-rating module here
+  ],
+  exports: [
+    ProfilePage
+  ]
+})
+
+export class ProfilePageModule { }
+```
 
 Include the component on page template, like the example below:
 ```HTML
