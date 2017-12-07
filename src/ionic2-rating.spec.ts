@@ -1,12 +1,16 @@
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
-import { IonicModule, Platform } from 'ionic-angular';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { IonicModule } from 'ionic-angular';
 import { } from 'jasmine';
 
 import { Ionic2Rating } from './ionic2-rating';
 
 describe('Ionic2Rating', () => {
-  let fixture: ComponentFixture<Ionic2Rating>;
   let component: Ionic2Rating;
+  let fixture: ComponentFixture<Ionic2Rating>;
+  let de: DebugElement;
+  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,16 +18,24 @@ describe('Ionic2Rating', () => {
       imports: [
         IonicModule.forRoot(Ionic2Rating)
       ]
-    })
+    });
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Ionic2Rating);
     component = fixture.componentInstance;
+
+    de = fixture.debugElement.query(By.css('ul'));
+    el = de.nativeElement;
   });
 
   it('should be created', () => {
     expect(component instanceof Ionic2Rating).toBe(true);
+  });
+
+  it('should show 5 stars by default', () => {
+    fixture.detectChanges();
+    expect(el.childElementCount).toBe(5);
   });
 
 });
