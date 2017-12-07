@@ -19,4 +19,4 @@ import { Ionic2Rating } from './ionic2-rating';
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class Ionic2RatingModule {}
+export class Ionic2RatingModule { }

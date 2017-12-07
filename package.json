@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/andrucz/ionic2-rating.git"
   },
-  "keywords": ["ionic2", "angular2"],
+  "keywords": [
+    "ionic2",
+    "angular2"
+  ],
   "author": "andrucz",
   "license": "MIT",
   "bugs": {
