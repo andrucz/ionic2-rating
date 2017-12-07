@@ -46,7 +46,11 @@ export class Ionic2Rating implements ControlValueAccessor {
     return this._max;
   }
   set max(val: any) {
-    this._max = this.getNumberPropertyValue(val);
+    const newValue = this.getNumberPropertyValue(val);
+    if (newValue !== this._max) {
+      this._max = newValue;
+      this.createStarIndexes();
+    }
   }
 
   @Input()
@@ -96,6 +100,10 @@ export class Ionic2Rating implements ControlValueAccessor {
 
   ngOnInit() {
     // ngFor needs an array
+    this.createStarIndexes();
+  }
+
+  createStarIndexes() {
     this.starIndexes = Array(this.max).fill(1).map((x, i) => i);
   }
 

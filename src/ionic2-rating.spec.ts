@@ -1,4 +1,4 @@
-import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { async, TestBed, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
@@ -17,6 +17,9 @@ describe('Ionic2Rating', () => {
       declarations: [Ionic2Rating],
       imports: [
         IonicModule.forRoot(Ionic2Rating)
+      ],
+      providers: [
+        { provide: ComponentFixtureAutoDetect, useValue: true }
       ]
     });
   }));
@@ -34,8 +37,13 @@ describe('Ionic2Rating', () => {
   });
 
   it('should show 5 stars by default', () => {
-    fixture.detectChanges();
     expect(el.childElementCount).toBe(5);
+  });
+
+  it('should reflect max value', () => {
+    component.max = 10;
+    fixture.detectChanges();
+    expect(el.childElementCount).toBe(10);
   });
 
 });
