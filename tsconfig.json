@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
     "module": "es2015",
     "target": "es5",
     "moduleResolution": "node",
@@ -13,10 +15,14 @@
     ],
     "outDir": "./dist"
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist",
-    "scripts"
+    "scripts",
+    "src/**/*.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "aot"
