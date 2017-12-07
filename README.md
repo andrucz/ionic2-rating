@@ -5,7 +5,7 @@ An Angular 4 (formerly Angular 2) component to visualize a star rating bar, buil
 
 ![Preview][preview-image]
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][downloads-url]
 
 [![NPM][nodei-image]][nodei-url]
 
@@ -108,3 +108,5 @@ Based on ionic-rating for Ionic 1: https://github.com/fraserxu/ionic-rating
 [nodei-url]: https://www.npmjs.com/package/ionic2-rating
 [downloads-image]: https://img.shields.io/npm/dm/ionic2-rating.svg
 [downloads-url]: http://badge.fury.io/js/ionic2-rating
+[travis-image]: https://travis-ci.org/andrucz/ionic2-rating.svg?branch=master
+[travis-url]: https://travis-ci.org/andrucz/ionic2-rating
