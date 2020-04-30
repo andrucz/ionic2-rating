@@ -1,7 +1,7 @@
 ionic2-rating
 =============
 
-An Angular 4 (formerly Angular 2) component to visualize a star rating bar, built for Ionic 2+.
+Angular 4 (formerly Angular 2) star rating bar, built for Ionic 2+.
 
 ![Preview][preview-image]
 
